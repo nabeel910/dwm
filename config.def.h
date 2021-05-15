@@ -8,8 +8,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "Roboto Mono Nerd Font Mono:size=11","Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Roboto Mono Nerd Font Mono:size=11";
+static const char *fonts[]          = { "Roboto Mono Nerd Font:size=11","Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Roboto Mono Nerd Font:size=11";
 static const char highpriority[]    = "chromium,librewolf,animeseries,whatsapp,nitrogen,lxappearance,lxtask,pcmanfm,thunar,bitwarden,writer,impress,transmission-gtk";
 static const char col_gray1[]       = "#191724";
 static const char col_gray2[]       = "#444444";
