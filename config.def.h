@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 */
 	/* class      			instance    title       tags mask     	     isfloating           monitor */
 	{ "Pavucontrol",      		NULL,        NULL,         0,                    1,                  -1 },
-	{ "Blueman-manager",      	NULL,        NULL,         0,                    0,                  -1 },
+	{ "Blueman-manager",      	NULL,        NULL,         0,                    1,                  -1 },
 	{ "LibreWolf",        		NULL,        NULL,         1 ,                   0,                  -1 },
 	{ "mpv",              		NULL,        NULL,         1 << 2,               0,                  -1 },
 	{ "WebApp-AnimeSeries3352",     NULL,        NULL,         1 << 2,               0,                  -1 },
