@@ -10,10 +10,7 @@ My dwm setup has the following patches:
 
 - fullscreen
 	enter monocle mode and hides the bar
-
-- remove border
-	removes border when only one window visible
-
+	
 - bar height
 	default is 30
 
