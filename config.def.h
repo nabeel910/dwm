@@ -35,8 +35,8 @@ static const Rule rules[] = {
 	{ "Blueman-manager",      	NULL,        NULL,         	0,                  0,  		1,                  -1 },
 	{ "LibreWolf",        		NULL,        NULL,         	1 ,                 0,  		0,                  -1 },
 	{ "mpv",              		NULL,        NULL,         	1 << 2,             1, 			0,                  -1 },
-	{ "WebApp-AnimeSeries3352",     NULL,        NULL,         	1 << 2,             1,  		0,                  -1 },
-	{ "pacman-packages",   		NULL,        "pacman-updates",  1 << 8,             1, 			0,                  -1 },
+	{ "WebApp-AnimeSeries3352",     NULL,        "AnimeSeries | Watch Anime Online free",         	1 << 2,             1,  		0,                  -1 },
+	{ "st-256color",   		NULL,        "pacman-updates",  1 << 8,             1, 			0,                  -1 },
 	{ "Gnomecast",         		NULL,        NULL,         	0,      	    0,	 		1,                  -1 }
 	};
 
