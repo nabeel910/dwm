@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#define TERMINAL "alacritty"
+#define TERMINAL "st"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -30,14 +30,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      			instance    title       tags mask  	  switchtotag  	     isfloating           monitor */
-	{ "Pavucontrol",      		NULL,        NULL,         0,                  0,  		1,                  -1 },
-	{ "Blueman-manager",      	NULL,        NULL,         0,                  0,  		1,                  -1 },
-	{ "LibreWolf",        		NULL,        NULL,         1 ,                 0,  		0,                  -1 },
-	{ "mpv",              		NULL,        NULL,         1 << 2,             1, 		0,                  -1 },
-	{ "WebApp-AnimeSeries3352",     NULL,        NULL,         1 << 2,             1,  		0,                  -1 },
-	{ "pacman-packages",   		NULL,        NULL,         1 << 8,             1, 		0,                  -1 },
-	{ "Gnomecast",         		NULL,        NULL,         0,      	       0,	 	1,                  -1 }
+	/* class      			instance    title       	tags mask  	  switchtotag  	     isfloating           monitor */
+	{ "Pavucontrol",      		NULL,        NULL,         	0,                  0,  		1,                  -1 },
+	{ "Blueman-manager",      	NULL,        NULL,         	0,                  0,  		1,                  -1 },
+	{ "LibreWolf",        		NULL,        NULL,         	1 ,                 0,  		0,                  -1 },
+	{ "mpv",              		NULL,        NULL,         	1 << 2,             1, 			0,                  -1 },
+	{ "WebApp-AnimeSeries3352",     NULL,        NULL,         	1 << 2,             1,  		0,                  -1 },
+	{ "pacman-packages",   		NULL,        pacman-updates,    1 << 8,             1, 			0,                  -1 },
+	{ "Gnomecast",         		NULL,        NULL,         	0,      	    0,	 		1,                  -1 }
 	};
 
 /* layout(s) */
@@ -115,7 +115,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_c,      spawn,          SHCMD("chromium") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("dmenuemoji") },
 	{ MODKEY,		     	XK_g,      spawn,          SHCMD("= --dmenu='dmenu -i -l 3'") },
-	{ MODKEY,     			XK_t,      spawn,          SHCMD(TERMINAL " --class tremc -t tremc  -e tremc") },
+	{ MODKEY,     			XK_t,      spawn,          SHCMD(TERMINAL " -t tremc  -e tremc") },
 	{ MODKEY,			XK_n,      spawn,          SHCMD(TERMINAL " -e lf") },
 	{ MODKEY,			XK_r,      spawn,          SHCMD(TERMINAL " -e newsboat") },
 	{ MODKEY,			XK_a,      spawn,          SHCMD("animeseries") },
@@ -128,8 +128,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     	XK_w,      spawn,          SHCMD("networkmanager_dmenu") },
 	{ MODKEY|ShiftMask,     	XK_n,      spawn,          SHCMD("pcmanfm") },
 	{ MODKEY|ShiftMask,     	XK_r,      spawn,          SHCMD("randomwall") },
-	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " --class pacman-packages,pacman-packages -t update  -e paru -Syu") },
-	{ MODKEY|ShiftMask,     	XK_v,      spawn,          SHCMD(TERMINAL " --class set-bg -t set-bg  -e viewwalls") },
+	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -t pacman-updates  -e paru -Syu") },
+	{ MODKEY|ShiftMask,     	XK_v,      spawn,          SHCMD(TERMINAL " -t sxiv set-bg  -e viewwalls") },
 	{ MODKEY|ShiftMask,		XK_k,      spawn,          SHCMD("pirokit") },
 	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("pendingpacks") },
 
