@@ -36,7 +36,7 @@ static const Rule rules[] = {
 	{ "LibreWolf",        		NULL,        NULL,         	1 ,                 0,  		0,                  -1 },
 	{ "mpv",              		NULL,        NULL,         	1 << 2,             1, 			0,                  -1 },
 	{ "WebApp-AnimeSeries3352",     NULL,        NULL,         	1 << 2,             1,  		0,                  -1 },
-	{ "pacman-packages",   		NULL,        "pacman-updates,"  1 << 8,             1, 			0,                  -1 },
+	{ "pacman-packages",   		NULL,        "pacman-updates",  1 << 8,             1, 			0,                  -1 },
 	{ "Gnomecast",         		NULL,        NULL,         	0,      	    0,	 		1,                  -1 }
 	};
 
