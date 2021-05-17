@@ -21,3 +21,6 @@ My dwm setup has the following patches:
 
 - pertag 
 	enable different layout on each tag
+
+- No border
+	remove wm border when there's only one window open.
