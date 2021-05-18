@@ -23,4 +23,4 @@ My dwm setup has the following patches:
 	enable different layout on each tag
 
 - No border
-	remove wm border when there's only one window open.
+	remove wm border when there's only one window open. (branch is present but code removed)
