@@ -15,9 +15,9 @@ My dwm setup has the following patches:
 	default is 30
 
 - switch to tag
-	Adds a rule option to switch to the configured tag when a window opens, then switch back when it closes.
+	Adds a rule option to switch to the configured tag when a window opens, switchs back when the window closes.
 
-- dmenu hight priority
+- dmenu high priority
 
 - pertag 
 	enable different layout on each tag
