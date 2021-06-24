@@ -8,8 +8,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "UbuntuMono Nerd Font:size=13","Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "UbuntuMono Nerd Font:size=13";
+static const char *fonts[]          = { "Roboto Mono Nerd Font:size=11","Noto Color Emoji:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Roboto Mono Nerd Font:size=11";
 static const char highpriority[]    = "chromium,librewolf,animeseries,whatsapp,nitrogen,lxappearance,lxtask,pcmanfm,thunar,bitwarden,writer,impress,transmission-gtk";
 static const char col_gray1[]       = "#191724";
 static const char col_gray2[]       = "#444444";
@@ -110,8 +110,8 @@ static Key keys[] = {
 
 /*apps launch with superkey*/	
 	{ MODKEY,			XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,			XK_p,      spawn,          SHCMD("keepassxc") },
-	{ MODKEY,			XK_s,      spawn,          SHCMD("qutebrowser") },
+//	{ MODKEY,			XK_p,      spawn,          SHCMD("keepmenu") },
+	{ MODKEY,			XK_s,      spawn,          SHCMD("surf") },
 	{ MODKEY,			XK_w,      spawn,          SHCMD("librewolf") },
 	{ MODKEY,			XK_c,      spawn,          SHCMD("chromium") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("dmenuemoji") },
@@ -130,9 +130,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     	XK_n,      spawn,          SHCMD("pcmanfm") },
 	{ MODKEY|ShiftMask,     	XK_r,      spawn,          SHCMD("randomwall") },
 	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -t pacman-updates  -e paru -Syu") },
-	{ MODKEY|ShiftMask,     	XK_v,      spawn,          SHCMD(TERMINAL " -t sxiv -e viewwalls") },
+	{ MODKEY|ShiftMask,     	XK_v,      spawn,          SHCMD(TERMINAL " -t sxiv set-bg  -e viewwalls") },
 	{ MODKEY|ShiftMask,		XK_k,      spawn,          SHCMD("pirokit") },
-	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("pendingpacks") },
+	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("pendingpacksnotification") },
 
 //apps launch with ctrl+alt
 	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("librewolf --private-window") },
