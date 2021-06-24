@@ -24,3 +24,5 @@ My dwm setup has the following patches:
 
 - No border
 	remove wm border when there's only one window open. (branch is present but code removed)
+
+- Fix border opacity
