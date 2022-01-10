@@ -26,9 +26,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class      		instance    title       tags mask     isfloating   monitor */
+	{ "Pavucontrol",     	NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -139,8 +139,8 @@ static Key keys[] = {
 
 // function buttons
 	{ 0, XF86XK_AudioMute,		           spawn,     	   SHCMD("pamixer -t && sound-notification && kill -39 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	           spawn,	   SHCMD("pamixer --allow-boost -i 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,		   spawn,	   SHCMD("pamixer --allow-boost -d 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	           spawn,	   SHCMD("pamixer --allow-boost --set-limit 130 -i 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,		   spawn,	   SHCMD("pamixer --allow-boost --set-limit 130 -d 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		           spawn,	   SHCMD("playerctl --player=playerctld previous && dunst-music-notification") },
 	{ 0, XF86XK_AudioNext,		           spawn,	   SHCMD("playerctl --player=playerctld next && dunst-music-notification") },
 	{ 0, XF86XK_AudioPlay,        	           spawn,	   SHCMD("playerctl --player=playerctld play-pause && dunst-music-notification") },
