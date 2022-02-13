@@ -102,8 +102,8 @@ static Key keys[] = {
 /*apps launch with superkey*/	
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 //	{ MODKEY,			XK_d,      spawn,          SHCMD("rofi -show drun -theme $HOME/.config/rofi/rofi-collection/nord/nord.rasi") },
-	{ MODKEY,			XK_w,      spawn,          SHCMD("brave") },
-	{ MODKEY,			XK_c,      spawn,          SHCMD("chromium") },
+	{ MODKEY,			XK_c,      spawn,          SHCMD("brave") },
+	{ MODKEY,			XK_w,      spawn,          SHCMD("chromium") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("dmenuemoji") },
 	{ MODKEY,		     	XK_f,      spawn,          SHCMD("dmenu_websearch") },
 	{ MODKEY,		     	XK_g,      spawn,          SHCMD("= --dmenu='dmenu -i -l 3'") },
@@ -122,13 +122,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     	XK_grave,  spawn,          SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask,     	XK_n,      spawn,          SHCMD("thunar") },
 	{ MODKEY|ShiftMask,     	XK_r,      spawn,          SHCMD("randomwall") },
-	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -e paru -Syu") },
+	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -e yay -Syu") },
 	{ MODKEY|ShiftMask,		XK_k,      spawn,          SHCMD("pirokit") },
 	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("updatenotif") },
 
 //apps launch with ctrl+alt
-	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("brave --incognito") },
-	{ Mod1Mask|ControlMask,		XK_c,      spawn,          SHCMD("chromium --incognito") },
+	{ Mod1Mask|ControlMask,		XK_c,      spawn,          SHCMD("brave --incognito") },
+	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("chromium --incognito") },
 	{ Mod1Mask|ControlMask,		XK_l,      spawn,          SHCMD("slock") },
 	{ Mod1Mask|ControlMask,		XK_e,      spawn,          SHCMD("dsession") },
 	{ MODKEY|ControlMask,     	XK_p, 	   spawn,          SHCMD("dunstctl context") },
