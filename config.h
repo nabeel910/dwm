@@ -8,10 +8,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-//static const char *fonts[]          = { "Roboto Mono Nerd Font:size=11","JoyPixels:pixelsize=14:antialias=true:autohint=true" };
 static const char *fonts[]          = { "TerminessTTF Nerd Font:style=bold:size=12","JoyPixels:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "TerminessTTF Nerd Font:size=13";
-//static const char dmenufont[]       = "Roboto Mono Nerd Font:size=11";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -29,7 +27,6 @@ static const Rule rules[] = {
 	/* class      		instance    title       tags mask     isfloating   monitor */
 	{ "Pavucontrol",     	NULL,       NULL,       0,            1,           -1 },
 	{ "Nitrogen",     	NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -118,6 +115,7 @@ static Key keys[] = {
 
 //apps launch with super+shift
 	{ MODKEY|ShiftMask,     	XK_w,      spawn,          SHCMD("networkmanager_dmenu -l 10") },
+	{ MODKEY|ShiftMask,     	XK_o,      spawn,          SHCMD("dunstctl action") },
 	{ MODKEY|ShiftMask,     	XK_q,      spawn,          SHCMD("dunstctl close") },
 	{ MODKEY|ShiftMask,     	XK_a,      spawn,          SHCMD("dunstctl close-all") },
 	{ MODKEY|ShiftMask,     	XK_grave,  spawn,          SHCMD("dunstctl history-pop") },
@@ -132,7 +130,7 @@ static Key keys[] = {
 	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("chromium --incognito") },
 	{ Mod1Mask|ControlMask,		XK_l,      spawn,          SHCMD("slock") },
 	{ Mod1Mask|ControlMask,		XK_e,      spawn,          SHCMD("dsession") },
-	{ MODKEY|ControlMask,     	XK_p, 	   spawn,          SHCMD("dunstctl context") },
+	{ Mod1Mask|ControlMask,     	XK_p, 	   spawn,          SHCMD("dunstctl context") },
 
 //apps with alt
 
