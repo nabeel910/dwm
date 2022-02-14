@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 #define TERMINAL "st"
-#include "/home/nabeel/apps/suckless/dwm/themes/dracula.h"
+#include "/home/nabeel/apps/suckless/dwm/themes/catppuccin.h"
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
