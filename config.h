@@ -102,8 +102,6 @@ static Key keys[] = {
 
 /*apps launch with superkey*/	
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-//	{ MODKEY,			XK_d,      spawn,          SHCMD("rofi -show drun -theme $HOME/.config/rofi/rofi-collection/nord/nord.rasi") },
-//	{ MODKEY,			XK_d,      spawn,          SHCMD("rofi -show drun") },
 	{ MODKEY,			XK_w,      spawn,          SHCMD("chromium") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("dmenuemoji") },
 	{ MODKEY,		     	XK_g,      spawn,          SHCMD("galculator") },
@@ -127,15 +125,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("updatenotif") },
 
 //apps launch with ctrl+alt
-//	{ Mod1Mask|ControlMask,		XK_c,      spawn,          SHCMD("brave --incognito") },
 	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("chromium --incognito") },
 	{ Mod1Mask|ControlMask,		XK_l,      spawn,          SHCMD("slock") },
 	{ Mod1Mask|ControlMask,		XK_e,      spawn,          SHCMD("dsession") },
 	{ Mod1Mask|ControlMask,     	XK_p, 	   spawn,          SHCMD("dunstctl context") },
-
-//apps with alt
-
-	{ Mod1Mask,			XK_Tab,    spawn,          SHCMD("rofi -show window -theme $HOME/.config/rofi/rofi-collection/nord/nord.rasi") },
 
 /// function buttons
 	{ 0, XF86XK_AudioMute,		           spawn,     	   SHCMD("pamixer -t && sound-notification && kill -39 $(pidof dwmblocks)") },
