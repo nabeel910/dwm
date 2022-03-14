@@ -18,6 +18,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+//static const char *tags[] = { " ", " ", " ", " ", "5", "6", "7", "8", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,6 +28,8 @@ static const Rule rules[] = {
 	/* class      		instance    title       tags mask     isfloating   monitor */
 	{ "Pavucontrol",     	NULL,       NULL,       0,            1,           -1 },
 	{ "Nitrogen",     	NULL,       NULL,       0,            1,           -1 },
+	{ "Gcolor3",     	NULL,       NULL,       0,            1,           -1 },
+	{ "Galculator",     	NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -53,8 +56,8 @@ static const Layout layouts[] = {
 	{ Mod1Mask,		        KEY,      tag,            {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #include <X11/XF86keysym.h>
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -100,16 +103,14 @@ static Key keys[] = {
 /*apps launch with superkey*/	
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 //	{ MODKEY,			XK_d,      spawn,          SHCMD("rofi -show drun -theme $HOME/.config/rofi/rofi-collection/nord/nord.rasi") },
-	{ MODKEY,			XK_c,      spawn,          SHCMD("brave") },
+//	{ MODKEY,			XK_d,      spawn,          SHCMD("rofi -show drun") },
 	{ MODKEY,			XK_w,      spawn,          SHCMD("chromium") },
 	{ MODKEY,			XK_e,      spawn,          SHCMD("dmenuemoji") },
-	{ MODKEY,		     	XK_f,      spawn,          SHCMD("dmenu_websearch") },
-	{ MODKEY,		     	XK_g,      spawn,          SHCMD("= --dmenu='dmenu -i -l 3'") },
+	{ MODKEY,		     	XK_g,      spawn,          SHCMD("galculator") },
 	{ MODKEY,     			XK_t,      spawn,          SHCMD(TERMINAL " -e tremc") },
 	{ MODKEY,			XK_n,      spawn,          SHCMD(TERMINAL " -e lfrun") },
 	{ MODKEY,			XK_r,      spawn,          SHCMD(TERMINAL " -e newsboat") },
-	{ MODKEY,			XK_m,      spawn,          SHCMD("rofi-beats-linux") },
-	{ MODKEY,			XK_x,      spawn,          SHCMD("clipmenu -i") },
+	{ MODKEY,			XK_x,      spawn,          SHCMD("clipmenu") },
 	{ MODKEY,			XK_slash,  spawn,          SHCMD("dunst-music-notification") },
 
 
@@ -121,12 +122,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     	XK_grave,  spawn,          SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask,     	XK_n,      spawn,          SHCMD("thunar") },
 	{ MODKEY|ShiftMask,     	XK_r,      spawn,          SHCMD("randomwall") },
-	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -e yay -Syu") },
+	{ MODKEY|ShiftMask,     	XK_p,      spawn,          SHCMD(TERMINAL " -e sudo apt update && sudo apt upgrade") },
 	{ MODKEY|ShiftMask,		XK_k,      spawn,          SHCMD("pirokit") },
 	{ MODKEY|ShiftMask,		XK_slash,  spawn,          SHCMD("updatenotif") },
 
 //apps launch with ctrl+alt
-	{ Mod1Mask|ControlMask,		XK_c,      spawn,          SHCMD("brave --incognito") },
+//	{ Mod1Mask|ControlMask,		XK_c,      spawn,          SHCMD("brave --incognito") },
 	{ Mod1Mask|ControlMask,		XK_w,      spawn,          SHCMD("chromium --incognito") },
 	{ Mod1Mask|ControlMask,		XK_l,      spawn,          SHCMD("slock") },
 	{ Mod1Mask|ControlMask,		XK_e,      spawn,          SHCMD("dsession") },
@@ -136,15 +137,15 @@ static Key keys[] = {
 
 	{ Mod1Mask,			XK_Tab,    spawn,          SHCMD("rofi -show window -theme $HOME/.config/rofi/rofi-collection/nord/nord.rasi") },
 
-// function buttons
+/// function buttons
 	{ 0, XF86XK_AudioMute,		           spawn,     	   SHCMD("pamixer -t && sound-notification && kill -39 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	           spawn,	   SHCMD("pamixer --allow-boost --set-limit 130 -i 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,		   spawn,	   SHCMD("pamixer --allow-boost --set-limit 130 -d 10 && sound-notification && kill -39 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPrev,		           spawn,	   SHCMD("playerctl --player=playerctld previous && dunst-music-notification") },
 	{ 0, XF86XK_AudioNext,		           spawn,	   SHCMD("playerctl --player=playerctld next && dunst-music-notification") },
 	{ 0, XF86XK_AudioPlay,        	           spawn,	   SHCMD("playerctl --player=playerctld play-pause && dunst-music-notification") },
-	{ 0, XF86XK_MonBrightnessUp,	           spawn,	   SHCMD("xbacklight -inc 15 && brightness") },
-	{ 0, XF86XK_MonBrightnessDown,	           spawn,	   SHCMD("xbacklight -dec 15 && brightness") },
+	{ 0, XF86XK_MonBrightnessUp,	           spawn,	   SHCMD("light -A 15 && brightness") },
+	{ 0, XF86XK_MonBrightnessDown,	           spawn,	   SHCMD("light -U 15 && brightness") },
 	{ 0, XK_Print,			           spawn,          SHCMD("dmenu-screenshot") },
 };
 
